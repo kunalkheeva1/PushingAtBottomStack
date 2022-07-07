@@ -6,14 +6,17 @@ public class PushingAtBottomStack {
 
 
     public static void pushingAtBottomStack(Stack<Integer> st, int x){
-
+        //if stack gets empty just push our parameterised element
             if(st.isEmpty()){
                 st.push(x);
                 return;
             }
+            //if not, every iteration just save the element in variable
             int storage = st.pop();
-            pushingAtBottomStack(st, x);
 
+            //and call it recursively again
+            pushingAtBottomStack(st, x);
+            //and push the elements in store
             st.push(storage);
         }
 
